@@ -3,106 +3,88 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {box-sizing: border-box}
+body {font-family: Arial;}
 
-/* Set height of body and the document to 100% */
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
+  transition: 0.3s;
   font-size: 17px;
-  width: 25%;
 }
 
-.tablink:hover {
-  background-color: #777;
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
 .tabcontent {
-  color: white;
   display: none;
-  padding: 100px 20px;
-  height: 100%;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
-
-.bg {
-  /* The image used - */
-  background-image: "gmd-13-3709-2020-f01-web.png";
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-  
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
-
-  
 </style>
 </head>
 <body>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('Tutorials', this, 'green')" >Tutorials</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
 
-<div id="Home" class="bg tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 </div>
 
-<div id="Tutorials" class="tabcontent">
-  <h3>News</h3>
-  <p>Some news this fine day!</p> 
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
 </div>
 
-<div id="Contact" class="tabcontent">
-  <h3>Contact</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
 </div>
 
-<div id="About" class="tabcontent">
-  <h3>About</h3>
-  <p>Who we are and what we do.</p>
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
 </div>
 
 <script>
-function openPage(pageName,elmnt,color) {
+function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablink");
+  tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
 </script>
    
 </body>
 </html> 
+
