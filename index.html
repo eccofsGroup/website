@@ -37,20 +37,35 @@ body, html {
   height: 100%;
 }
 
-#Home {background-color: red;}
+.bg {
+  /* The image used - https://gmd.copernicus.org/articles/13/3709/2020/#&gid=1&pid=1 */
+  background-image: url("img_girl.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
+/*#Home {background-color: red;}*/
 #News {background-color: green;}
 #Contact {background-color: blue;}
 #About {background-color: orange;}
+
+  
 </style>
 </head>
 <body>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('Home', this, 'transparent')">Home</button>
 <button class="tablink" onclick="openPage('Tutorials', this, 'green')" id="defaultOpen">Tutorials</button>
 <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
 <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
 
-<div id="Home" class="tabcontent">
+<div id="Home" class="bg">
   <h3>Home</h3>
   <p>Home is where the heart is..</p>
 </div>
