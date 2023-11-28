@@ -41,13 +41,28 @@ body {font-family: Arial;}
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.bg {
+  /* The image used */
+  background-image: url("img_girl.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}  
 </style>
 </head>
 <body>
 
+<div class="bg">
 <h2>Eccofs project</h2>
 <p>Click on the buttons inside the tabbed menu:</p>
-
+</div>
+  
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')">Home</button>
   <button class="tablinks" onclick="openCity(event, 'Tutorials')">Tutorials</button>
