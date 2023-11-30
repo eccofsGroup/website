@@ -1,107 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
-}
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+body {margin:0;}
+
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
+.icon-bar a {
   float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.icon-bar a:hover {
+  background-color: #000;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.active {
+  background-color: #04AA6D;
 }
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.bg {
-  /* The image used */
-  background-image: url("gmd-13-3709-2020-f01-web.png");
-  
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}  
 </style>
-</head>
 <body>
 
-<div class="bg">
-<h2>Eccofs project</h2>
-<p>Click on the buttons inside the tabbed menu:</p>
-  
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Home')" class="fa fa-home" >Home</button>
-  <button class="tablinks" onclick="openCity(event, 'Tutorials')" href="Tutorials/tutorials.html">Tutorials</button>
-  <button class="tablinks" onclick="openCity(event, 'About')">About</button>
+<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a> 
+  <a href="#"><i class="fa fa-bug"></i></a> 
+  <a href="#"><i class="fa fa-envelope"></i></a> 
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a> 
 </div>
 
-<!-- <div id="Home" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Tutorials" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="About" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div> -->
-</div>
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-   
 </body>
 </html> 
-
